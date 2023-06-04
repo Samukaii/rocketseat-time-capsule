@@ -1,8 +1,8 @@
-import Image from 'next/image'
 import { FC } from 'react'
-import nlwLogo from '../../assets/nlw-space-time.svg'
-import { ButtonLink } from '../components/button/ButtonLink'
-import { SignIn } from './SignIn'
+import { Copyright } from '../components/Copyright'
+import { EmptyMemories } from '../components/EmptyMemories'
+import { Hero } from '../components/Hero'
+import { SignIn } from '../components/SignIn'
 
 export const Home: FC = () => {
   return (
@@ -15,37 +15,13 @@ export const Home: FC = () => {
         {/* Stripes */}
         <div className="pr absolute bottom-0 right-2 top-0 w-2 bg-stripes" />
 
-        {/* Sign In */}
-        <SignIn></SignIn>
-
-        {/* Hero */}
-        <div className="space-y-5">
-          <Image src={nlwLogo} alt="NLW Spacetime" />
-
-          <div className="max-w-[420px] space-y-1">
-            <h1 className="text-5xl font-bold leading-tight text-gray-50">
-              Sua cápsula do tempo
-            </h1>
-            <p className="text-lg leading-relaxed">
-              Colecione momentos marcantes da sua jornada e compartilhe (se
-              quiser) com o mundo{' '}
-            </p>
-
-            <ButtonLink color="green">Cadastrar lembrança</ButtonLink>
-          </div>
-        </div>
+        <SignIn />
+        <Hero />
+        <Copyright />
       </div>
 
-      {/* Right */}
       <div className="flex flex-col  bg-[url(../assets/bg-stars.svg)] bg-cover p-16">
-        <div className="flex flex-1 items-center justify-center">
-          <p className="w-[360px] text-center leading-relaxed">
-            Você ainda não registrou nenhuma lembrança, comece a{' '}
-            <a href="" className="underline hover:text-gray-50">
-              Criar agora
-            </a>
-          </p>
-        </div>
+        <EmptyMemories />
       </div>
     </main>
   )
