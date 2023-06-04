@@ -3,8 +3,12 @@ import { Copyright } from '../components/Copyright'
 import { EmptyMemories } from '../components/EmptyMemories'
 import { Hero } from '../components/Hero'
 import { SignIn } from '../components/SignIn'
+import { cookies } from 'next/dist/client/components/headers'
+import { Profile } from '../components/Profile'
 
 export const Home: FC = () => {
+  const isAuthenticated = cookies().has('token')
+
   return (
     <main className="grid min-h-screen grid-cols-2">
       {/* Left */}
@@ -15,7 +19,7 @@ export const Home: FC = () => {
         {/* Stripes */}
         <div className="pr absolute bottom-0 right-2 top-0 w-2 bg-stripes" />
 
-        <SignIn />
+        {isAuthenticated ? <Profile /> : <SignIn />}
         <Hero />
         <Copyright />
       </div>
