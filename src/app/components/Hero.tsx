@@ -16,7 +16,9 @@ export const Hero: FC = () => (
         com o mundo{' '}
       </p>
 
-      <ButtonLink color="green">Cadastrar lembrança</ButtonLink>
+      <ButtonLink href="/memories/new" color="green">
+        Cadastrar lembrança
+      </ButtonLink>
     </div>
   </div>
 )
